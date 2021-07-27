@@ -48,3 +48,20 @@ ol {
 .bg-red-600 {
   background-color: #a70b34;
 }
+
+/* fix category colors issue in prod */
+.bg-yellow-600 {
+  background-color: #d97705;
+}
+.bg-blue-600 {
+  background: #3929eb;
+}
+.bg-green-600 {
+  background-color: #049669;
+}
+.bg-purple-600 {
+  background-color: #7730db;
+}
+.bg-red-600 {
+  background-color: #a70b34;
+}
