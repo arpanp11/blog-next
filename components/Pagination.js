@@ -15,7 +15,7 @@ export default function Pagination({ currentPage, numPages }) {
       <ul className='flex pl-0 list-none my-2'>
         {/* previous button */}
         {!isFirst && (
-          <Link href={prevPage}>
+          <Link href={prevPage} passHref>
             <li className='relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-gray-800 mr-1 hover:bg-gray-200 cursor-pointer'>
               Previous
             </li>
@@ -24,7 +24,7 @@ export default function Pagination({ currentPage, numPages }) {
 
         {/* add page number */}
         {Array.from({ length: numPages }, (_, i) => (
-          <Link href={`/blog/page/${i + 1}`}>
+          <Link href={`/blog/page/${i + 1}`} passHref>
             <li className='relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-gray-800 mr-1 hover:bg-gray-200 cursor-pointer'>
               {i + 1}
             </li>
@@ -33,7 +33,7 @@ export default function Pagination({ currentPage, numPages }) {
 
         {/* next button */}
         {!isLast && (
-          <Link href={nextPage}>
+          <Link href={nextPage} passHref>
             <li className='relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-gray-800 mr-1 hover:bg-gray-200 cursor-pointer'>
               Next
             </li>
