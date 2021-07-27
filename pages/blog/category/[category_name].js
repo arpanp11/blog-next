@@ -1,11 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import Link from 'next/link';
 
 import Layout from '@/components/Layout';
 import Post from '@/components/Post';
-import { sortbyDate } from '@/utils/index';
+import { getPosts } from '@/lib/posts';
 
 export default function CategoryBlogPage({ posts, categoryName }) {
   return (
@@ -48,21 +47,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { category_name } }) {
   const files = fs.readdirSync(path.join('posts'));
-  const posts = files.map((filename) => {
-    const slug = filename.replace('.md', '');
-
-    const markdownWithMeta = fs.readFileSync(
-      path.join('posts', filename),
-      'utf-8'
-    );
-
-    const { data: frontmatter } = matter(markdownWithMeta);
-
-    return {
-      slug,
-      frontmatter,
-    };
-  });
+  const posts = getPosts();
 
   //   filter post by category
   const categoryPosts = posts.filter(
@@ -71,7 +56,7 @@ export async function getStaticProps({ params: { category_name } }) {
 
   return {
     props: {
-      posts: categoryPosts.sort(sortbyDate),
+      posts: categoryPosts,
       categoryName: category_name,
     },
   };
