@@ -30,7 +30,7 @@ export default function PostPage({
         />
 
         <div className='flex justify-between items-center bg-gray-100 p-2 my-8'>
-          <div className=''>
+          <div className='flex items-center'>
             <Image
               src={author_image}
               alt=''

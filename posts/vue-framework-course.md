@@ -2,7 +2,7 @@
 title: 'Vue Framework Course'
 date: 'July 25, 2021'
 excerpt: 'Vue is a very powerful, high level framework for building web applications'
-cover_image: '/images/posts/img8.jpg'
+cover_image: '/images/posts/img8.jpeg'
 category: 'Vue'
 author: 'Sam Gibbs'
 author_image: 'https://randomuser.me/api/portraits/men/18.jpg'
